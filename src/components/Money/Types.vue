@@ -21,22 +21,6 @@ export default class Types extends Vue {
     this.type = type;
   }
 }
-// export default {
-//   name: "Types",
-//   data() {
-//     return {
-//       type: "-"
-//     };
-//   },
-//   methods: {
-//     selectType(type) {
-//       if (type !== "-" && type !== "+") {
-//         throw new Error("type is unknow");
-//       }
-//       this.type = type;
-//     }
-//   }
-// };
 </script>
 
 <style lang="scss" scoped>
