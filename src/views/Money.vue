@@ -1,6 +1,6 @@
 <template>
   <Layout class-prefix="layout">
-    <NumberPad @update:value="onUpdateAmount" @submit="saveRecord" />
+    <NumberPad :value.sync="record.amount" @submit="saveRecord" />
     <Tabs :data-source="recordTypeList" :value.sync="record.type" />
     <div class="notes">
       <FormItem field-name="备注" placeholder="在这里输入备注" @update:value="onUpdateNotes" />
@@ -35,9 +35,6 @@ export default class Money extends Vue {
   created() {
     this.$store.commit("fetchRecords");
   }
-  onUpdateAmount(value: string) {
-    this.record.amount = parseFloat(value);
-  }
 
   onUpdateNotes(value: string) {
     this.record.notes = value;
@@ -49,7 +46,7 @@ export default class Money extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-.layout-content {
+::v-deep .layout-content {
   display: flex;
   flex-direction: column-reverse;
 }

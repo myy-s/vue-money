@@ -1,6 +1,6 @@
 <template>
   <svg class="icon" @click="$emit('click', $event)">
-    <use :xlink:href="'#'+name"/>
+    <use :xlink:href="'#'+name" />
   </svg>
 </template>
 
